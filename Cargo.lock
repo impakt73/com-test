@@ -129,6 +129,7 @@ dependencies = [
 [[package]]
 name = "ftd2xx"
 version = "0.1.0"
+source = "git+https://github.com/impakt73/ftd2xx-rs#f7d6f53d46b51e9da588fa12ae0d7fd17c9bc7c8"
 dependencies = [
  "ftd2xx-sys",
 ]
@@ -136,6 +137,7 @@ dependencies = [
 [[package]]
 name = "ftd2xx-sys"
 version = "0.1.0"
+source = "git+https://github.com/impakt73/ftd2xx-sys-rs#078431255564d7837137f84b53b765fa18d3c193"
 dependencies = [
  "bindgen",
 ]
