@@ -18,20 +18,20 @@ fn main() -> Result<()> {
         println!("Description: {}", program_data.get_description());
         println!("Serial Number: {}", program_data.get_serial_number());
         println!("Program Data: {}", program_data);
-        for char_value in 'A'..'Z' {
-            device.write_all(&[char_value as u8])?;
+        for value in 0..64 {
+            device.write_all(&[value as u8])?;
 
             let mut read_value: u8 = 0;
             device.read_exact(slice::from_mut(&mut read_value))?;
 
-            let match_string = if char_value == read_value as char {
+            let match_string = if value == read_value {
                 "✔️"
             } else {
                 "❌"
             };
             println!(
                 "Sent: {} -> Received: {} [{}]",
-                char_value, read_value as char, match_string
+                value, read_value, match_string
             );
         }
         device.close()?;
